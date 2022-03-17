@@ -9,6 +9,11 @@ int main(){
 
 	for(;;){
 
+		printf("recv tps: %d\n", server.getRecvTPS());
+		printf("send tps: %d\n", server.getSendTPS());
+		printf("packet pool: %I64d chunks\n\n", CPacketPtr_Lan::getPacketPoolUsage());
+
+		Sleep(1000);
 	}
 
 	return 0;

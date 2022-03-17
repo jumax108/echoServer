@@ -6,7 +6,7 @@ bool CEchoServer::onConnectRequest(unsigned int ip, unsigned short port){
 
 void CEchoServer::onClientJoin(unsigned int ip, unsigned short port, unsigned __int64 sessionID){
 
-	printf("client join: %d, %d, %d\n", ip, port, sessionID);
+	printf("client join: %d, %d, %I64x\n", ip, port, sessionID);
 
 }
 
@@ -18,8 +18,6 @@ void CEchoServer::onClientLeave(unsigned __int64 sessionID){
 
 void CEchoServer::onRecv(unsigned __int64 sessionID, CPacketPointer recvPacket){
 	
-	printf("recv !\n");
-
 	int data;
 	recvPacket >> data;
 
