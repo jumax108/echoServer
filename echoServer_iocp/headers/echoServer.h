@@ -28,4 +28,7 @@ class CEchoServer: public CLanServer{
 	// 에러 상황에서 호출됩니다.
 	virtual void onError(int errorCode, const wchar_t* errorMsg);
 
+	unsigned __int64 sendData[65536]={0,};
+	unsigned short logCnt=0;
+
 };

@@ -78,6 +78,9 @@ public:
 	inline int getRecvTPS(){
 		return _recvTPS;
 	}
+	inline int getAcceptTPS(){
+		return _acceptTPS;
+	}
 	// 현재 접속중인 세션 수를 반환합니다.
 	inline unsigned __int64 getSessionCount(){
 		return _sessionCnt;
@@ -114,8 +117,11 @@ private:
 	HANDLE _tpsCalcThread;
 	int _sendCnt;
 	int _recvCnt;
+	int _acceptCnt;
 	int _sendTPS;
 	int _recvTPS;
+	int _acceptTPS;
+
 
 	void sendPost(stSession* session);
 	void recvPost(stSession* session);
@@ -157,6 +163,8 @@ private:
 		
 		// 총 32비트로 릴리즈 플래그 변화와 ioCnt가 0인지 동시에 체크하기 위함
 		bool _beRelease;
-
+		
+		wchar_t* _log[65536];
+		unsigned short _logCnt;
 	};
 };

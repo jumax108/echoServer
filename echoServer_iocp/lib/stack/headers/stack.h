@@ -50,6 +50,7 @@ private:
 	unsigned int _capacity;
 
 	struct stNode{
+		friend CStack;
 
 	public:
 		inline stNode(T& data){
