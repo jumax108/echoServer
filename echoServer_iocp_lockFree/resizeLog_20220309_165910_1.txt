@@ -1,0 +1,8 @@
+protocol buffer resized
+
+before size: 10
+after size: 20
+
+buffer start in hex
+
+08 00 59 42 64 01 00 00 00 00 
